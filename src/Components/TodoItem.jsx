@@ -9,12 +9,14 @@ export default function TodoItem({ todo,
     const [isEditing, setIsEditing] = useState(false);
     const [editedText, setEditedText] = useState(todo.text);
     const editRef = useRef(null);
+    
     const saveHandler = () => {
         if (!editedText.trim()) return;
 
         editTodo(todo.id, editedText);
         setIsEditing(false);
     };
+    
     useEffect(() => {
         if (isEditing) {
             editRef.current.focus();
@@ -24,10 +26,11 @@ export default function TodoItem({ todo,
 
     return (
         <div onDoubleClick={() => setIsEditing(true)}
-            className={`bg-white py-2 px-4 rounded mb-3 flex justify-between items-center sm:flex-row sm:items-center sm:justify-between transition-all duration-300 hover:bg-gray-200 hover:shadow-md dark:text-black ${todo.isDone ? "opacity-60" : ""}`}>
+            className={`bg-white py-2 px-4 rounded mb-3 flex justify-between items-center transition-all duration-300 hover:bg-gray-200 hover:shadow-md dark:text-black ${todo.isDone ? "opacity-60" : ""
+                }`}>
 
 
-            <div className="flex items-center w-full sm:w-auto ">
+            <div className="flex items-center min-w-0 ">
                 <input
 
                     type="checkbox"
@@ -45,13 +48,14 @@ export default function TodoItem({ todo,
                         }
                     }}
                     ref={editRef}
-                    className=" border-non outline-none focus:outline-none rounded mx-4 " />) : <h3 className={todo.isDone ? "line-through text-red-400 dark:text-red-300  text-lg mx-4  wrap-break-word" : "text-lg mx-4 wrap-break-word  "} >{todo.text}
-                </h3>}
+                    className=" border-non outline-none focus:outline-none rounded mx-4 " />)
+                    : <h3 className={todo.isDone ? "line-through text-red-400 dark:text-red-300  text-lg mx-4  wrap-break-word" : "text-lg mx-4 wrap-break-word  "} >{todo.text}
+                    </h3>}
             </div>
 
-            <div className="flex gap-3  w-full sm:flex-row sm:w-auto  ">
+            <div className="flex items-center gap-3 ml-auto shrink-0  ">
 
-                <div className="hidden sm:flex sm:items-center gap-3 ">
+                <div className=" hidden sm:flex sm:items-center gap-3">
                     <p className="text-sm ">
                         Priority :{" "}
                         <span

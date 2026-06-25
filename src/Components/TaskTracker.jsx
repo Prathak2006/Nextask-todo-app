@@ -1,9 +1,9 @@
-
 export default function TaskTracker({ filter, setFilter, todos }) {
 
     const total = todos.length;
     const completed = todos.filter((todo) => todo.isDone).length;
     const pending = total - completed;
+    
     return (
         <div className="grid grid-cols-3 gap-4 mb-6 w-full md:w-3/4 mx-auto my-8 ">
 

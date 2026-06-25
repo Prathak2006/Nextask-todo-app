@@ -1,7 +1,5 @@
-export default function FilterButton({
-  filter,
-  setFilter,
-}) {
+export default function FilterButton({filter,setFilter}) {
+  
   return (
     <div className="flex gap-2">
 

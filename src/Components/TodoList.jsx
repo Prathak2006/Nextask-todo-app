@@ -1,5 +1,6 @@
 import TodoItem from "./TodoItem";
 import FilterButton from "./FilterButton";
+
 export default function TodoList({
   todos,
   filter,
@@ -7,6 +8,7 @@ export default function TodoList({
   toggleTodo,
   editTodo,
   setFilter }) {
+    
   const filteredTodos = todos.filter((todo) => {
     if (filter === "completed") {
       return todo.isDone;
