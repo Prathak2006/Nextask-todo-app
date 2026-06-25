@@ -1,16 +1,62 @@
-# React + Vite
+# NexTask
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and responsive task management application built with React, Vite, and Tailwind CSS that helps users organize, prioritize, and track their daily tasks efficiently.
 
-Currently, two official plugins are available:
+## Features
+- Add, edit, and delete tasks
+- Mark tasks as completed or pending
+- Inline task editing
+- Task priority management (High, Medium, Low)
+- Filter tasks by All, Pending, and Completed
+- Local Storage support for data persistence
+- Dark & Light mode toggle
+- Responsive design for mobile, tablet, and desktop
+- Real-time task statistics (Total, Pending, Completed)
+- Double-click to edit tasks
+- Modern and user-friendly UI
+- Hover effects and smooth transitions
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech Stack
 
-## React Compiler
+- React
+- Vite
+- JavaScript
+- Tailwind CSS
+- Material UI Icons
+- Local Storage API
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Getting Started
 
-## Expanding the ESLint configuration
+Clone the repository:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+git clone https://github.com/your-username/nextask.git
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
+
+```bash
+npm run dev
+```
+
+## Local Storage
+
+Tasks are automatically saved in the browser's local storage, ensuring that data remains available even after refreshing or reopening the application.
+
+## Future Improvements
+
+- Task search functionality
+- Due dates and reminders
+- Drag and drop task sorting
+- Categories and tags
+- Task export/import feature
+
+## Author
+
+Prathak Soni
