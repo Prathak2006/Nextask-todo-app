@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import DeleteIcon from '@mui/icons-material/Delete';
-
+import EditNoteIcon from '@mui/icons-material/EditNote';
 export default function TodoItem({ todo,
     deleteTodo,
     toggleTodo,
@@ -74,7 +74,7 @@ export default function TodoItem({ todo,
                 </div>
 
                 <button onClick={() => deleteTodo(todo.id)}><DeleteIcon /></button>
-                {isEditing ? (<button onClick={saveHandler}>Edit </button>) : (<button onClick={() => setIsEditing(true)}>Edit </button>)}
+                {isEditing ? (<button onClick={saveHandler}><EditNoteIcon/> </button>) : (<button onClick={() => setIsEditing(true)}><EditNoteIcon/> </button>)}
             </div>
         </div>
     );
