@@ -49,13 +49,7 @@ npm run dev
 
 Tasks are automatically saved in the browser's local storage, ensuring that data remains available even after refreshing or reopening the application.
 
-## Future Improvements
 
-- Task search functionality
-- Due dates and reminders
-- Drag and drop task sorting
-- Categories and tags
-- Task export/import feature
 
 ## Author
 
