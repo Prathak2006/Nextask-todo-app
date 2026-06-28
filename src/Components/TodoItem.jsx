@@ -9,20 +9,28 @@ export default function TodoItem({ todo,
     const [isEditing, setIsEditing] = useState(false);
     const [editedText, setEditedText] = useState(todo.text);
     const editRef = useRef(null);
-    
+
     const saveHandler = () => {
         if (!editedText.trim()) return;
 
         editTodo(todo.id, editedText);
         setIsEditing(false);
     };
-    
+
     useEffect(() => {
         if (isEditing) {
             editRef.current.focus();
             editRef.current.select();
         }
     }, [isEditing]);
+
+    const priorityColor =
+        todo.priority === "High"
+            ? "text-rose-500 sm:text-gray-900 "
+            : todo.priority === "Medium"
+                ? "text-amber-500 sm:text-gray-900 "
+                : "text-sky-500 sm:text-gray-900 ";
+
 
     return (
         <div onDoubleClick={() => setIsEditing(true)}
@@ -49,7 +57,13 @@ export default function TodoItem({ todo,
                     }}
                     ref={editRef}
                     className=" border-non outline-none focus:outline-none rounded mx-4 " />)
-                    : <h3 className={todo.isDone ? "line-through text-red-400 dark:text-red-300  text-lg mx-4  wrap-break-word" : "text-lg mx-4 wrap-break-word  "} >{todo.text}
+                    : <h3
+                        className={`text-lg mx-4 wrap-break-word ${todo.isDone
+                                ? "line-through text-gray-900 dark:text-gray-800"
+                                : priorityColor
+                            }`}
+                    >
+                        {todo.text}
                     </h3>}
             </div>
 
@@ -74,7 +88,7 @@ export default function TodoItem({ todo,
                 </div>
 
                 <button onClick={() => deleteTodo(todo.id)}><DeleteIcon /></button>
-                {isEditing ? (<button onClick={saveHandler}><EditNoteIcon/> </button>) : (<button onClick={() => setIsEditing(true)}><EditNoteIcon/> </button>)}
+                {isEditing ? (<button onClick={saveHandler}><EditNoteIcon /> </button>) : (<button onClick={() => setIsEditing(true)}><EditNoteIcon /> </button>)}
             </div>
         </div>
     );
